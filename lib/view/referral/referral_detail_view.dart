@@ -3,6 +3,7 @@ import 'package:satujuta_app_mobile/app/const/app_assets.dart';
 import 'package:satujuta_app_mobile/app/theme/app_colors.dart';
 import 'package:satujuta_app_mobile/app/theme/app_text_style.dart';
 import 'package:satujuta_app_mobile/view/register/components/reg_commission.dart';
+import 'package:satujuta_app_mobile/view/settings_sreen/edit_profile_view.dart';
 
 import '../../app/const/app_consts.dart';
 import '../../app/const/app_sizes.dart';
@@ -79,7 +80,7 @@ class _ReferralDetailViewState extends State<ReferralDetailView> with TickerProv
           'Detail Profil',
           style: AppTextStyle.bold(context, fontSize: 18),
         ),
-        moreButton(),
+        editProfileButton(),
       ],
     );
   }
@@ -97,10 +98,10 @@ class _ReferralDetailViewState extends State<ReferralDetailView> with TickerProv
     );
   }
 
-  Widget moreButton() {
+  Widget editProfileButton() {
     return AppIconButton(
       onPressed: () {
-        Navigator.pop(context);
+        Navigator.pushNamed(context, EditProfileView.routeName);
       },
       icon: CustomIcon.edit_icon,
       iconSize: 18,

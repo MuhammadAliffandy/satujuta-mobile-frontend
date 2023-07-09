@@ -8,6 +8,7 @@ import 'package:satujuta_app_mobile/app/theme/app_text_style.dart';
 import 'package:satujuta_app_mobile/app/widget/app_image.dart';
 import 'package:satujuta_app_mobile/app/widget/app_modal.dart';
 import 'package:satujuta_app_mobile/app/widget/my_icon_button.dart';
+import 'package:satujuta_app_mobile/view/onboarding/onboarding_view.dart';
 import 'package:satujuta_app_mobile/view/organisms/custom_nav_button.dart';
 import 'package:satujuta_app_mobile/view/program_list/program_list_view.dart';
 import 'package:satujuta_app_mobile/view/referral/referral_detail_view.dart';
@@ -82,9 +83,9 @@ class _DashboardViewState extends State<DashboardView> {
       appBar: appBar(),
       body: WillPopScope(
         onWillPop: () async {
-          Navigator.pop(context);
+          Navigator.pushReplacementNamed(context, OnboardingView.routeName);
 
-          return false;
+          return true;
         },
         child: Stack(
           alignment: Alignment.bottomCenter,
